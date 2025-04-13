@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     list.addEventListener('dragover', e => {
       e.preventDefault();
       const dragging = document.querySelector('.dragging');
-      list.appendChild(dragging);
+      if (dragging && dragging !== list.lastElementChild) {
+        list.appendChild(dragging);
+      }
     });
   });
 });
@@ -13,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function addTask(columnId) {
   const taskText = prompt("Enter task name:");
   if (!taskText) return;
+
   const task = document.createElement('div');
   task.className = 'task';
   task.draggable = true;
