@@ -4,5 +4,7 @@
   "content_type": "SN|Component",
   "area": "editor-editor",
   "version": "1.0.0",
-  "url": "http://localhost:8001"
+  "url": "https://antonio59.github.io/standard-notes-kanban/index.html",
+  "permissions": ["stream-context-item", "read-items", "write-items"],
+  "description": "A simple Kanban board plugin."
 }
