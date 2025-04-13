@@ -1,74 +1,46 @@
-/* style.css */
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 10px;
-    background-color: #f4f4f4; /* Or inherit from SN theme */
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
 }
 
-.kanban-board {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto; /* Allow horizontal scrolling for many columns */
-    padding-bottom: 15px; /* Space for scrollbar */
-    min-height: calc(100vh - 40px); /* Take up available height */
+#kanban {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
-.kanban-column {
-    flex: 0 0 280px; /* Fixed width columns, don't grow/shrink */
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    max-height: calc(100vh - 60px); /* Limit height */
+.column {
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  width: 30%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
 }
 
-.kanban-column h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #ccc;
-    text-transform: capitalize; /* Make tag names look nicer */
+h2 {
+  text-align: center;
 }
 
-.cards-container {
-    flex-grow: 1;
-    overflow-y: auto; /* Allow vertical scrolling within columns */
-    min-height: 50px; /* Ensure drop zone exists even when empty */
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-right: 5px; /* Prevent scrollbar overlap */
+.task-list {
+  flex: 1;
+  min-height: 100px;
+  padding: 10px;
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  background: #fafafa;
+  margin-bottom: 10px;
 }
 
-.kanban-card {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    padding: 8px 10px;
-    cursor: grab;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    /* Prevent text selection during drag */
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-}
-
-.kanban-card:active {
-    cursor: grabbing;
-}
-
-/* Style for when dragging over a valid drop target */
-.kanban-column.drag-over .cards-container {
-    background-color: #d0d0d0;
-    outline: 2px dashed #999;
-    outline-offset: -5px;
-}
-
-/* Style for the card being dragged */
-.kanban-card.dragging {
-    opacity: 0.5;
-    transform: rotate(3deg);
+.task {
+  padding: 8px;
+  margin-bottom: 5px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  cursor: move;
 }
