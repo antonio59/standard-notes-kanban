@@ -1,45 +1,30 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.4">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanban Board</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;SN Kanban Board&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="style.css"&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="kanban-board" class="kanban-board"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Columns will be dynamically generated here --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Example Column Structure:</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="kanban-column" data-column-id="kanban:todo"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Todo&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="cards-container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="kanban-card" draggable="true" data-note-id="NOTE_UUID_1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>Note Title 1</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="kanban-card" draggable="true" data-note-id="NOTE_UUID_2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>Note Title 2</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">         </span>--&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="script.js"&gt;&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+  <div id="kanban">
+    <div class="column" data-column="todo">
+      <h2>To Do</h2>
+      <div class="task-list" id="todo"></div>
+      <button onclick="addTask('todo')">+ Add Task</button>
+    </div>
+    <div class="column" data-column="inprogress">
+      <h2>In Progress</h2>
+      <div class="task-list" id="inprogress"></div>
+      <button onclick="addTask('inprogress')">+ Add Task</button>
+    </div>
+    <div class="column" data-column="done">
+      <h2>Done</h2>
+      <div class="task-list" id="done"></div>
+      <button onclick="addTask('done')">+ Add Task</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
