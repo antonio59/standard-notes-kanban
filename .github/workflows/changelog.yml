@@ -5,6 +5,10 @@ on:
     branches: [main, master]
   workflow_dispatch:
 
+concurrency:
+  group: changelog-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   changelog:
     runs-on: ubuntu-latest
